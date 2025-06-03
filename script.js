@@ -8,6 +8,11 @@ function makeGrid(){
     for (let s= 16; s< gridSize * gridSize; s++){
         const square = document.createElement("div");// creates a div
         square.classList.add("square"); //gives the div a class called square
+
+         // ⭐ When the mouse goes over a square, change its color
+    square.addEventListener("mouseover", function () {
+        square.style.backgroundColor = "black";
+      });
         gridContainer.appendChild(square); // add the square to the grid
 
     }
