@@ -25,7 +25,13 @@ body {
   
   /* Each square in the grid */
   .square {
-    border: 1px solid hsl(0, 40%, 90%);
+    border: 1px solid hsl(0, 3%, 7%);
     background-color: white;
+  }
+  #clear-btn{
+    background-color: maroon;
+    color: white;
+    padding: 60px, 20px;
+    margin-top: 15px;
   }
   
