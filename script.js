@@ -1,6 +1,7 @@
 //To fetch container in the html doc
 const gridContainer = document.getElementById("grid-container");
 const clearButton = document.getElementById("clear-btn");
+const colorPicker = document.getElementById("color-picker");
 
 
 
@@ -16,6 +17,18 @@ document.body.addEventListener("mouseup", function () {
   mouseDown = false;
 });
 
+
+
+
+let currentColor = colorPicker.value;
+  // Update currentColor whenever the user picks a new color
+colorPicker.addEventListener("input", function () {
+    currentColor = colorPicker.value;
+  });
+
+  
+
+
 //Create a function to build a 16x16 grid (that's 256 squares!)
 function makeGrid(){
     const gridSize= 16; //creates a 16 * 16 to make 256 squares
@@ -27,7 +40,7 @@ function makeGrid(){
          // ⭐ When the mouse goes over a square, change its color
     square.addEventListener("mouseover", function () {
         if (mouseDown) {
-            square.style.backgroundColor = "black";
+            square.style.backgroundColor = currentColor;
           }
       });
         gridContainer.appendChild(square); // add the square to the grid
@@ -46,3 +59,5 @@ clearButton.addEventListener("click", function () {
       square.style.backgroundColor = "white";
     });
   });
+
+  
